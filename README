@@ -1,0 +1,41 @@
+/*
+* Queue Scheduling Algorithms
+* D/D/1, DRR vs FQ, RED
+*
+* Simulation of Queue Scheduling Algorithms
+* D/D/1 and M/D/1 
+* DRR (Deficit Round Robin) vs Fair Queuing (FQ)
+* TCP congestion with Drop Tail and RED 
+*
+* @authors: vsubhashini
+*/
+
+*This folder contains 
+	this README file
+	the lab report
+	and 3 sub-folders named 1-MD1, 2-DRRvsFQ and 3-TCP-RED; which contain the solutions for questions 1.1, 1.2 and 1.3 respectively.
+
+1. Usage: 
+	$ns md1.tcl <packetsize in B> <simulation duration in secs>
+   To view the animation using nam:
+	$nam out.nam
+
+   Example:
+	$ns md1.tcl 1300 4.4
+
+2. Usage:
+	$ns fqdrr.tcl <DRR|FQ> <sim time (s)> [uniform_cwnd ]
+	[uniform_cwnd] - is for uniform tcp flow generation in all sources. This is optional. 
+	By default the sources generate at the specified rate of 2Mbps, 4Mbps, 6Mbps and 8Mbps.
+   Example:
+	$ns fqdrr.tcl DRR 5
+	$ns fqdrr.tcl FQ 11.5 50
+
+3. Usage:
+	$ns red.tcl <DropTail|RED> <sim time (s)> [uniform_cwnd]
+	[uniform_cwnd] - is for uniform tcp flow generation in all sources. This is optional.
+	By default the sources generate at the specified rate of 2Mbps, 4Mbps, 6Mbps and 8Mbps.
+   Example:
+	$ns red.tcl DropTail 20
+	$ns red.tcl RED 25.4 4000
+	
